@@ -7,8 +7,7 @@ body {
 }
 
 main {
-    margin-top: 20px;
-    padding-top: 20px;
+    margin-top: 0px;
 }
 
 header {
@@ -108,15 +107,20 @@ nav ul li ul li {
 
 footer {
     background-color: #294c24;
+    color: #fff;
     padding: 10px;
     text-align: center;
+}
+
+footer a {
+    text-decoration: none;
+    color: #fff;
 }
 
 footer p {
     margin: 0;
 }
 .footer {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     /* background-color: #f5f5f5; */
     padding: 20px;
     display: flex;
@@ -150,16 +154,16 @@ footer p {
 .carousel {
     display: flex;
     overflow-x: auto;
-    scroll-snap-type: x mandatory;
     width: 100%;
-    scrollbar-width: thin;
-    scrollbar-color: transparent transparent;
     scroll-behavior: smooth;
+}
+.carousel img {
+    width: 100%;
 }
 
 .product {
     flex-shrink: 0;
-    width: calc(100% - 40px);
+    width: 100%;
     min-width: 280px;
     text-align: center;
     scroll-snap-align: start;
@@ -206,22 +210,4 @@ footer p {
 .product-card h3,
 .product-card p {
     text-align: center;
-}
-
-.add-to-cart {
-    display: inline-block;
-    padding: 8px 12px;
-    background-color: #4CAF00;
-    color: white;
-    border: none;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    font-size: 14px;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-}
-
-.add-to-cart:hover {
-    background-color: #2a6134;
 }
