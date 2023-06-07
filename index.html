@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Food eCommerce - Home</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="./assets/images/logo.png" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li>
+                    <a href="#">Products</a>
+                    <ul>
+                        <li><a href="products_cat1.html">Category 1</a></li>
+                        <li><a href="products_cat2.html">Category 2</a></li>
+                        <li><a href="products_cat3.html">Category 3</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="about.html">About Us</a>
+                    <ul>
+                        <li><a href="#">Our Stories</a></li>
+                        <li><a href="#">Join Us</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class="material-icons">person</i></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Product Carousel -->
+    <section>
+        <div id="product-carousel">
+            <div class="carousel">
+                <img class="product" src="products/1.jpg" alt="Product 1">
+                <img class="product" src="products/2.jpg" alt="Product 2">
+                <img class="product" src="products/3.jpg" alt="Product 3">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer">
+            <div class="footer-card">
+                <h3>GET IN TOUCH</h3>
+                <p>Address here</p><br>
+                <p>Email</p>
+                <p>Phone no.</p>
+                <p>Social Media Icons</p>
+            </div>
+            <div class="footer-card">
+                <h3>NEWSLETTER</h3>
+                <p>Subscribe to our newsletter to get exciting discounts and early access to new products.</p><br>
+                <input type="email" name="email" id="email"><input type="submit" value="Subscribe"
+                    class="add-to-cart"><br>
+                <input type="checkbox" name="checkbox" id="checkbox">I agree with the terms and conditions <br>
+
+            </div>
+            <div class="footer-card">
+                <h3>USEFUL LINKS</h3>
+                <ul>
+                    <li><a href="#">Link 1</a></li>
+                    <li><a href="#">Link 2</a></li>
+                    <li><a href="#">Link 3</a></li>
+                    <li><a href="#">Link 4</a></li>
+                    <li><a href="#">Link 5</a></li>
+                </ul>
+            </div>
+        </div><br><br>
+
+        <p>&copy;
+            <?php echo date("Y"); ?> Happyway. All rights reserved.
+        </p>
+
+    </footer>
+
+    <script>
+        const carousel = document.querySelector('.carousel');
+        let scrollInterval;
+
+        const startAutoScroll = () => {
+            scrollInterval = setInterval(() => {
+                const scrollLeft = carousel.scrollLeft;
+                const itemWidth = carousel.offsetWidth;
+                const currentIndex = Math.floor(scrollLeft / itemWidth);
+                const maxIndex = carousel.childElementCount - 1;
+                const targetIndex = currentIndex < maxIndex ? currentIndex + 1 : 0;
+
+                carousel.scrollTo({
+                    left: targetIndex * itemWidth,
+                    behavior: 'smooth'
+                });
+            }, 3000);
+        };
+
+        startAutoScroll();
+
+        carousel.addEventListener('mouseenter', () => {
+            clearInterval(scrollInterval);
+        });
+
+        carousel.addEventListener('mouseleave', () => {
+            startAutoScroll();
+        });
+    </script>
+
+
+</body>
+
+</html>
