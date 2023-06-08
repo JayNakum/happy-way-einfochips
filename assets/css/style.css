@@ -118,6 +118,11 @@ footer {
     text-align: center;
 }
 
+footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
 footer a {
     text-decoration: none;
     color: #fff;
